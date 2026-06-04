@@ -318,6 +318,93 @@
     .person .name { font-weight: 600; }
     .person .room-of { font-size: 0.78rem; color: #8a8f88; margin-top: 2px; }
 
+    /* ---------- Itinerary ---------- */
+    .itin-wrap { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .itinerary { display: flex; flex-direction: column; gap: 22px; max-width: 860px; margin: 0 auto; }
+    .day-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border-left: 6px solid var(--green);
+    }
+    .day-card.party { border-left-color: var(--coral); }
+    .day-card.explore { border-left-color: var(--sky); }
+    .day-card.travel { border-left-color: var(--gold); }
+    .day-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+      background: #fbfaf6;
+      border-bottom: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+    .day-date {
+      width: 58px; height: 58px; flex: none;
+      border-radius: 14px;
+      background: var(--green);
+      color: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; line-height: 1;
+    }
+    .day-card.party .day-date { background: var(--coral); }
+    .day-card.explore .day-date { background: var(--sky); }
+    .day-card.travel .day-date { background: var(--gold); }
+    .day-date .d-num { font-size: 1.5rem; font-weight: 700; }
+    .day-date .d-mon { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px; }
+    .day-title { flex: 1 1 200px; }
+    .day-title h3 { font-size: 1.3rem; color: var(--green-dark); }
+    .day-title .dow { font-size: 0.82rem; color: #8a8f88; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+    .day-badge {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      white-space: nowrap;
+    }
+    .day-card.party .day-badge { background: var(--coral); }
+    .day-card.explore .day-badge { background: var(--sky); }
+    .day-card.travel .day-badge { background: var(--gold); color: var(--green-dark); }
+    .slots { padding: 14px 24px 22px; }
+    .slot {
+      display: flex;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .slot:last-child { border-bottom: none; }
+    .slot .when {
+      flex: none;
+      width: 66px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--green);
+      padding-top: 2px;
+    }
+    .day-card.party .slot .when { color: var(--coral); }
+    .day-card.explore .slot .when { color: var(--sky); }
+    .slot .what { flex: 1; }
+    .slot .what strong { color: var(--ink); }
+    .slot .what a { font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(31,111,84,0.3); }
+    .slot .what a:hover { border-bottom-color: var(--green); }
+    .slot .what .sub { display: block; color: #6c726a; font-size: 0.9rem; margin-top: 2px; }
+    .itin-foot {
+      max-width: 860px; margin: 26px auto 0;
+      font-size: 0.85rem; color: #9a9388; font-style: italic; text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .slot { flex-direction: column; gap: 2px; }
+      .slot .when { width: auto; }
+    }
+
     /* ---------- Footer ---------- */
     footer {
       background: var(--green-dark);
@@ -620,6 +707,138 @@
       </div>
     </div>
   </section>
+
+  <div class="itin-wrap">
+    <section id="itinerary">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">The Game Plan</div>
+          <h2>Day-by-Day Itinerary</h2>
+          <p>Thu–Sat are the big party nights. Sun–Tue we recover &amp; explore. Everything below is a suggestion — adjust freely.</p>
+        </div>
+
+        <div class="itinerary">
+
+          <!-- WED NOV 11 — ARRIVAL -->
+          <article class="day-card travel">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">11</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Wednesday</div><h3>Touchdown &amp; Settle In</h3></div>
+              <span class="day-badge">Arrival</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Afternoon</div><div class="what"><strong>Arrive at the villa</strong>, meet the on-site team, claim rooms.<span class="sub">Drop bags, grab a drink, break in the pool &amp; jacuzzi.</span></div></div>
+              <div class="slot"><div class="when">Evening</div><div class="what">Easy welcome dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=Ens%C3%B3+Restaurante+El+Poblado+Medellin" target="_blank" rel="noopener">Ensó</a> or <a href="https://www.google.com/maps/search/?api=1&amp;query=Relato+El+Poblado+Medellin" target="_blank" rel="noopener">Relato</a>.<span class="sub">Both walkable in Provenza, great food, relaxed vibe — no late night, everyone's flown in.</span></div></div>
+              <div class="slot"><div class="when">Night</div><div class="what">Nightcap on the terrace, plan the week.<span class="sub">Save the energy — the party starts tomorrow.</span></div></div>
+            </div>
+          </article>
+
+          <!-- THU NOV 12 — PARTY 1 -->
+          <article class="day-card party">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">12</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Thursday</div><h3>Comuna 13 by Day, Provenza by Night</h3></div>
+              <span class="day-badge">Party Night ①</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Morning</div><div class="what">Sleep in, brunch at <a href="https://www.google.com/maps/search/?api=1&amp;query=Delarte+Caf%C3%A9+Brunch+Poblado+Medellin" target="_blank" rel="noopener">Delarte Café</a>.<span class="sub">Try the eggs benedict and the crookie.</span></div></div>
+              <div class="slot"><div class="when">Midday</div><div class="what"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Comuna+13+Graffitour+Medellin" target="_blank" rel="noopener">Comuna 13 graffiti tour</a></strong> — street art, escalators, history.<span class="sub">Go early-ish to beat crowds; ~half day with a guide.</span></div></div>
+              <div class="slot"><div class="when">8:00 PM</div><div class="what">Dinner + warm-up drinks at <a href="https://www.google.com/maps/search/?api=1&amp;query=Envy+Rooftop+Medellin" target="_blank" rel="noopener">Envy Rooftop</a>.<span class="sub">Heads up: rooftops here often have a per-group minimum spend — confirm before sitting.</span></div></div>
+              <div class="slot"><div class="when">11 PM+</div><div class="what">Out in <strong>Parque Lleras / Provenza</strong> — <a href="https://www.google.com/maps/search/?api=1&amp;query=Vintrash+El+Poblado+Medellin" target="_blank" rel="noopener">Vintrash</a> (reggaeton up, techno down).<span class="sub">All within a few blocks — easy to bar-hop.</span></div></div>
+            </div>
+          </article>
+
+          <!-- FRI NOV 13 — PARTY 2 -->
+          <article class="day-card party">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">13</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Friday</div><h3>Coffee Country &amp; Club Night</h3></div>
+              <span class="day-badge">Party Night ②</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Late AM</div><div class="what">Recovery brunch at <a href="https://www.google.com/maps/search/?api=1&amp;query=Floretto+Brunch+Coffee+El+Poblado+Medellin" target="_blank" rel="noopener">Floretto</a>, then pool time.</div></div>
+              <div class="slot"><div class="when">Afternoon</div><div class="what"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Coffee+tour+La+Casa+Grande+Santa+Elena+Medellin" target="_blank" rel="noopener">Coffee farm tour — La Casa Grande</a></strong> (Santa Elena, ~20 min out).<span class="sub">Blind tasting + lunch + city views. Mellow, scenic, and short on travel.</span></div></div>
+              <div class="slot"><div class="when">8:30 PM</div><div class="what">Steak dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=Ocio+Restaurante+El+Poblado+Medellin" target="_blank" rel="noopener">Ocio</a> (famous short ribs) or <a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurante+Okus+El+Poblado+Medellin" target="_blank" rel="noopener">Okus</a>.</div></div>
+              <div class="slot"><div class="when">11 PM+</div><div class="what">Big night at <a href="https://www.google.com/maps/search/?api=1&amp;query=Porton+de+Provenza+Medellin" target="_blank" rel="noopener">Portón de Provenza</a> + <a href="https://www.google.com/maps/search/?api=1&amp;query=La+House+Provenza+Medellin" target="_blank" rel="noopener">La House</a>.<span class="sub">La House runs till ~4 AM — multiple floors, multiple DJs.</span></div></div>
+            </div>
+          </article>
+
+          <!-- SAT NOV 14 — PARTY 3 -->
+          <article class="day-card party">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">14</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Saturday</div><h3>Pool Day → The Big One</h3></div>
+              <span class="day-badge">Party Night ③</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Daytime</div><div class="what"><strong>Full villa pool day.</strong> Music, jacuzzi, lazy recovery.<span class="sub">Consider a private chef at the villa for lunch (the host offers it on request).</span></div></div>
+              <div class="slot"><div class="when">Sunset</div><div class="what">Pre-game drinks at <a href="https://www.google.com/maps/search/?api=1&amp;query=Victoria+Roof+Garden+El+Poblado+Medellin" target="_blank" rel="noopener">Victoria Roof Garden</a> or <a href="https://www.google.com/maps/search/?api=1&amp;query=360+Rooftop+Bar+El+Poblado+Medellin" target="_blank" rel="noopener">360 Rooftop</a>.</div></div>
+              <div class="slot"><div class="when">9:00 PM</div><div class="what">Group dinner — save room, this is the marquee night.</div></div>
+              <div class="slot"><div class="when">Midnight</div><div class="what"><strong>Saturday is the biggest night out</strong> — Lleras + Provenza clubs.<span class="sub"><a href="https://www.google.com/maps/search/?api=1&amp;query=Vintrash+El+Poblado+Medellin" target="_blank" rel="noopener">Vintrash</a> goes till ~4 AM Saturdays; pace yourselves.</span></div></div>
+            </div>
+          </article>
+
+          <!-- SUN NOV 15 — RECOVER -->
+          <article class="day-card">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">15</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Sunday</div><h3>Reset &amp; Recover</h3></div>
+              <span class="day-badge">Recover</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Late AM</div><div class="what">Slow brunch — <a href="https://www.google.com/maps/search/?api=1&amp;query=Gardenia+Brunch+Coffee+Milla+de+Oro+Medellin" target="_blank" rel="noopener">Gardenia</a> or back to a Provenza favorite.</div></div>
+              <div class="slot"><div class="when">Afternoon</div><div class="what"><strong>Spa &amp; massage day</strong> — <a href="https://www.google.com/maps/search/?api=1&amp;query=Element+Wellness+Center+El+Poblado+Medellin" target="_blank" rel="noopener">Element Wellness</a> (cold plunge, oxygen, deep tissue) or <a href="https://www.google.com/maps/search/?api=1&amp;query=MAHAI+Wellness+Massage+Spa+El+Poblado+Medellin" target="_blank" rel="noopener">MAHAI.Wellness</a>.<span class="sub">Book the group in early — these fill up. Best hangover cure going.</span></div></div>
+              <div class="slot"><div class="when">Evening</div><div class="what">Chill sunset dinner at <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Deriva+Rooftop+Bar+El+Poblado+Medellin" target="_blank" rel="noopener">La Deriva Rooftop</a>, early night.</div></div>
+            </div>
+          </article>
+
+          <!-- MON NOV 16 — EXPLORE / GUATAPE -->
+          <article class="day-card explore">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">16</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Monday</div><h3>Guatapé Day Trip</h3></div>
+              <span class="day-badge">Explore</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Early</div><div class="what"><strong>Drive to <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Piedra+del+Pe%C3%B1ol+Guatape" target="_blank" rel="noopener">El Peñol / Guatapé</a></strong> (~2 hrs each way).<span class="sub">Hire a driver or van for the group — easiest with this many people.</span></div></div>
+              <div class="slot"><div class="when">Midday</div><div class="what">Climb the rock — <strong>708 steps</strong>, unreal lake views up top.<span class="sub">Bring water &amp; sunscreen; cash for the entry ticket.</span></div></div>
+              <div class="slot"><div class="when">Afternoon</div><div class="what">Lunch &amp; wander the <strong>colorful town of Guatapé</strong> — zócalos, tuk-tuks, lakeside.</div></div>
+              <div class="slot"><div class="when">Evening</div><div class="what">Back to Medellín, low-key dinner near the villa.</div></div>
+            </div>
+          </article>
+
+          <!-- TUE NOV 17 — EXPLORE / LAST DAY -->
+          <article class="day-card explore">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">17</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Tuesday</div><h3>Adrenaline &amp; Farewell Dinner</h3></div>
+              <span class="day-badge">Explore</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Morning</div><div class="what"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Parapente+San+Felix+Medellin" target="_blank" rel="noopener">Paragliding in San Félix</a></strong> — fly over the valley (optional, ~45 min out).<span class="sub">For anyone not flying: explore Medellín — Botanical Garden, Pueblito Paisa, or Lleras shopping.</span></div></div>
+              <div class="slot"><div class="when">Afternoon</div><div class="what">Last pool session, pack-prep, souvenirs.</div></div>
+              <div class="slot"><div class="when">8:00 PM</div><div class="what"><strong>Farewell dinner</strong> at <a href="https://www.google.com/maps/search/?api=1&amp;query=Entre+Maderos+Las+Palmas+Medellin" target="_blank" rel="noopener">Entre Maderos</a> (city-light views up Las Palmas).<span class="sub">Easy last night — flights out tomorrow.</span></div></div>
+            </div>
+          </article>
+
+          <!-- WED NOV 18 — DEPARTURE -->
+          <article class="day-card travel">
+            <div class="day-head">
+              <div class="day-date"><span class="d-num">18</span><span class="d-mon">Nov</span></div>
+              <div class="day-title"><div class="dow">Wednesday</div><h3>Checkout &amp; Fly Home</h3></div>
+              <span class="day-badge">Departure</span>
+            </div>
+            <div class="slots">
+              <div class="slot"><div class="when">Morning</div><div class="what">Final breakfast, pack up, settle the <a href="https://secure.splitwise.com/#/groups/98418416" target="_blank" rel="noopener">Splitwise</a> tab.</div></div>
+              <div class="slot"><div class="when">Checkout</div><div class="what">Hand back keys, airport transfers.<span class="sub">JMC (Rionegro) is ~45 min from El Poblado — leave buffer for traffic.</span></div></div>
+            </div>
+          </article>
+
+        </div>
+        <p class="itin-foot">⏱️ Times are loose suggestions. Tours (Comuna 13, coffee, Guatapé, paragliding) are best pre-booked, especially for a group of 6+.</p>
+      </div>
+    </section>
+  </div>
 
   <footer>
     <div class="wrap">
