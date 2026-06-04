@@ -1,1 +1,505 @@
+Here is the updated HTML code. I have added a dedicated button for your Splitwise group directly under the Airbnb button in the hero section, styled to match the page's aesthetic:
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medellín 2026 · Nov 11–18 · Luxury Villa in El Poblado</title>
+  <meta name="description" content="Our group trip to Medellín, Colombia — Nov 11 to Nov 18, 2026. Luxury 6-bedroom villa in El Poblado with a private pool. Room assignments, amenities, and the Airbnb." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sand: #fbf7f0;
+      --ink: #1f2a24;
+      --green: #1f6f54;
+      --green-dark: #134735;
+      --gold: #e8a33d;
+      --coral: #e8654a;
+      --sky: #2f9bd6;
+      --card: #ffffff;
+      --line: #e7e0d4;
+      --shadow: 0 10px 30px rgba(19, 71, 53, 0.10);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--sand);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; line-height: 1.1; margin: 0; }
+    a { color: var(--green); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+
+    /* ---------- Hero ---------- */
+    header.hero {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      padding: 96px 22px 90px;
+      background:
+        linear-gradient(rgba(19,71,53,0.55), rgba(19,71,53,0.75)),
+        radial-gradient(circle at 20% 20%, var(--gold), transparent 45%),
+        radial-gradient(circle at 80% 30%, var(--coral), transparent 45%),
+        linear-gradient(135deg, var(--green) 0%, var(--sky) 100%);
+      overflow: hidden;
+    }
+    header.hero .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+    header.hero h1 {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    }
+    header.hero .dates {
+      margin-top: 16px;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 500;
+    }
+    header.hero .cta-group {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    header.hero .cta {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      background: #fff;
+      color: var(--green-dark);
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    header.hero .cta.secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    header.hero .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+
+    /* ---------- Quick facts ---------- */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: -48px auto 0;
+      position: relative;
+      z-index: 5;
+    }
+    .fact {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+    .fact .num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: var(--green); }
+    .fact .lab { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: #7a8079; margin-top: 4px; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 64px 0; }
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .section-head .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--coral);
+    }
+    .section-head h2 { font-size: clamp(1.9rem, 5vw, 2.8rem); margin-top: 8px; color: var(--green-dark); }
+    .section-head p { color: #6c726a; max-width: 620px; margin: 12px auto 0; }
+
+    /* ---------- Room cards ---------- */
+    .rooms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .room {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform .18s ease;
+    }
+    .room:hover { transform: translateY(-4px); }
+    .room.feature { grid-column: 1 / -1; }
+    .photo {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+    }
+    .room.feature .photo { aspect-ratio: 21 / 9; }
+    .photo .ph-note {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.92);
+      font-size: 0.85rem;
+      text-align: center;
+      gap: 6px;
+      padding: 12px;
+    }
+    .photo .ph-note svg { width: 38px; height: 38px; opacity: 0.9; }
+    .room .meta { padding: 20px 22px 24px; }
+    .room .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--green);
+      background: #eaf3ef;
+      padding: 4px 11px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .room h3 { font-size: 1.4rem; color: var(--green-dark); }
+    .room .guests { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .guests .chip {
+      font-size: 0.85rem;
+      background: var(--sand);
+      border: 1px solid var(--line);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .guests .chip.undecided {
+      background: #fff0ed;
+      border-color: #fcdbd4;
+      color: var(--coral);
+    }
+    .room .bedinfo { margin-top: 12px; color: #6c726a; font-size: 0.92rem; }
+
+    /* ---------- Amenities ---------- */
+    .amen-wrap { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .amenities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px 26px;
+    }
+    .amenity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 4px;
+      border-bottom: 1px dashed var(--line);
+      font-weight: 500;
+    }
+    .amenity svg { width: 22px; height: 22px; color: var(--green); flex: none; }
+    .note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9a9388;
+      font-style: italic;
+    }
+
+    /* ---------- Guests roster ---------- */
+    .roster { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .person {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      min-width: 130px;
+    }
+    .person .avatar {
+      width: 54px; height: 54px; border-radius: 50%;
+      margin: 0 auto 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.2rem;
+      color: #fff;
+    }
+    .person .name { font-weight: 600; }
+    .person .room-of { font-size: 0.78rem; color: #8a8f88; margin-top: 2px; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--green-dark);
+      color: #d7e6df;
+      text-align: center;
+      padding: 50px 22px;
+    }
+    footer h2 { color: #fff; font-size: 1.8rem; }
+    footer .cta {
+      margin-top: 22px;
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 13px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    footer .small { margin-top: 26px; font-size: 0.8rem; opacity: 0.7; }
+
+    @media (max-width: 760px) {
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .rooms { grid-template-columns: 1fr; }
+      .amenities { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 460px) {
+      .amenities { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">The Crew Goes South · 🇨🇴</span>
+      <h1>Medellín 2026</h1>
+      <p class="dates">🗓️ November 11 – November 18, 2026 · 7 nights</p>
+      <p class="dates" style="font-size:1.05rem;opacity:.92;margin-top:6px;">✨ Luxury Villa · El Poblado, Medellín</p>
+      
+      <div class="cta-group">
+        <a class="cta" href="https://www.airbnb.com/rooms/1198917328027879473?unique_share_id=67ab0a9a-54be-4081-9a8c-34319ba38b80" target="_blank" rel="noopener">
+          🏠 View the Airbnb Listing →
+        </a>
+        <a class="cta secondary" href="https://secure.splitwise.com/#/groups/98418416" target="_blank" rel="noopener">
+          ⚖️ Splitwise Group Expenses →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact"><div class="num">7</div><div class="lab">Nights</div></div>
+      <div class="fact"><div class="num">6</div><div class="lab">Bedrooms</div></div>
+      <div class="fact"><div class="num">7</div><div class="lab">Beds</div></div>
+      <div class="fact"><div class="num">∞</div><div class="lab">Pool Views</div></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The Villa</div>
+        <h2>About This Space</h2>
+      </div>
+      <div style="max-width:760px;margin:0 auto;color:#4a4f48;font-size:1.05rem;">
+        <p>Indulge in the epitome of luxury at our villa nestled in the heart of <strong>El Poblado</strong>. Boasting elegant, spacious accommodations, a <strong>private pool with breathtaking city views</strong>, and meticulous attention to detail, our home offers a sanctuary of comfort and style — conveniently located near Medellín's top dining spots and vibrant nightlife.</p>
+        <p>The villa features <strong>6 beautifully appointed bedrooms with 7 beds in total</strong> (4 king-size, 2 queen-size, and 1 double), with <strong>air conditioning in every bedroom</strong>. Enjoy a <strong>private pool and outdoor jacuzzi</strong>, spacious living and dining areas, a fully equipped gourmet kitchen, an expansive <strong>panoramic terrace</strong>, and private on-site parking.</p>
+        <p>A dedicated on-site team greets you with a warm welcome, a full tour, and is available throughout your stay. Exclusive extras are available on request — <strong>private chefs</strong>, curated local recommendations, and guided tours to make the most of your time in Medellín.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="rooms" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Where Everyone Sleeps</div>
+        <h2>Room Assignments</h2>
+        <p>6 bedrooms · 7 beds (4 king, 2 queen, 1 double) · A/C in every room.</p>
+      </div>
+
+      <div class="rooms">
+        <article class="room feature">
+          <div class="photo" style="background: linear-gradient(135deg, #134735, #1f6f54);" data-photo="photos/master.jpg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Add <strong>photos/master.jpg</strong></span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">★ Master Suite</span>
+            <h3>The Master Bedroom</h3>
+            <div class="guests"><span class="chip">Paolo</span></div>
+            <p class="bedinfo">King bed · ensuite bathroom · A/C · the best view in the house.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="photo" style="background: linear-gradient(135deg, #e8a33d, #e8654a);" data-photo="https://a0.muscache.com/im/pictures/miso/Hosting-1198917328027879473/original/6c4ff552-0941-4cf1-a0c1-3fdb4a5f4035.jpeg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Loading Image...</span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">Bedroom</span>
+            <h3>Cyrus's Room</h3>
+            <div class="guests"><span class="chip">Cyrus</span></div>
+            <p class="bedinfo">King bed · A/C.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="photo" style="background: linear-gradient(135deg, #2f9bd6, #1f6f54);" data-photo="photos/room3.jpg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Add <strong>photos/room3.jpg</strong></span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">Bedroom</span>
+            <h3>King Bedroom (Undecided)</h3>
+            <div class="guests"><span class="chip undecided">Chris Q?</span></div>
+            <p class="bedinfo">King bed · A/C.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="photo" style="background: linear-gradient(135deg, #1f6f54, #e8a33d);" data-photo="photos/room4.jpg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Add <strong>photos/room4.jpg</strong></span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">Bedroom</span>
+            <h3>King Bedroom (Undecided)</h3>
+            <div class="guests"><span class="chip undecided">Damion?</span></div>
+            <p class="bedinfo">King bed · A/C.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="photo" style="background: linear-gradient(135deg, #e8654a, #2f9bd6);" data-photo="photos/room5.jpg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Add <strong>photos/room5.jpg</strong></span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">Bedroom</span>
+            <h3>Queen Bedroom (Undecided)</h3>
+            <div class="guests"><span class="chip undecided">Chris S?</span></div>
+            <p class="bedinfo">Queen bed · A/C.</p>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="photo" style="background: linear-gradient(135deg, #2f9bd6, #e8a33d);" data-photo="photos/room6.jpg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Add <strong>photos/room6.jpg</strong></span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">Bedroom</span>
+            <h3>Queen Bedroom (Undecided)</h3>
+            <div class="guests"><span class="chip undecided">Open Slot</span></div>
+            <p class="bedinfo">Queen bed · A/C.</p>
+          </div>
+        </article>
+
+        <article class="room feature">
+          <div class="photo" style="background: linear-gradient(135deg, #1f6f54, #2f9bd6);" data-photo="photos/guests.jpg">
+            <div class="ph-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M3 18v2M21 18v2M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+              <span>Add <strong>photos/guests.jpg</strong></span>
+            </div>
+          </div>
+          <div class="meta">
+            <span class="tag">Extra Bed</span>
+            <h3>The 7th Bed · For Other Guests</h3>
+            <div class="guests"><span class="chip undecided">Guest Bed</span></div>
+            <p class="bedinfo">A double bed — the villa's 7th — ready for anyone else joining the crew.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="amen-wrap">
+    <section id="amenities">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">What's Included</div>
+          <h2>Amenities</h2>
+          <p>Everything this El Poblado villa offers.</p>
+        </div>
+        <div class="amenities">
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h18M7 12V7a5 5 0 0 1 10 0v5M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg> Private Pool</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14a8 8 0 0 1 16 0v2H4zM4 16h16M7 11l1-2M12 11l1-2M17 11l1-2"/></svg> Outdoor Jacuzzi</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a14 14 0 0 0 0 18M3 12h18M5 6h14M5 18h14"/></svg> Breathtaking City Views</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18v10H3zM7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg> A/C in Every Bedroom</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v6H4zM6 10v10M18 10v10M4 14h16"/></svg> Gourmet Kitchen</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v20M5 8l7-6 7 6M5 8v8l7 6 7-6V8"/></svg> Panoramic Terrace</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h18v6H3zM6 12V9a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3M7 18v2M17 18v2"/></svg> Spacious Living &amp; Dining</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg> Private On-site Parking</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg> Dedicated On-site Team</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Smooth Welcome &amp; Check-in</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3v8a6 6 0 0 0 12 0V3M12 17v4M8 21h8"/></svg> Private Chef (on request)</div>
+          <div class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Curated Tours &amp; Tips</div>
+        </div>
+        <p class="note">📋 Airbnb registration #215531 · El Poblado, Medellín, Colombia</p>
+      </div>
+    </section>
+  </div>
+
+  <section id="crew">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">The Squad</div>
+        <h2>Who's Coming</h2>
+      </div>
+      <div class="roster">
+        <div class="person"><div class="avatar" style="background:#134735;">P</div><div class="name">Paolo</div><div class="room-of">Master Suite</div></div>
+        <div class="person"><div class="avatar" style="background:#1f6f54;">C</div><div class="name">Cyrus</div><div class="room-of">King bed</div></div>
+        <div class="person"><div class="avatar" style="background:#e8a33d;">D</div><div class="name">Damion</div><div class="room-of">King bed</div></div>
+        <div class="person"><div class="avatar" style="background:#e8654a;">CS</div><div class="name">Chris S</div><div class="room-of">Queen bed</div></div>
+        <div class="person"><div class="avatar" style="background:#2f9bd6;">CQ</div><div class="name">Chris Q</div><div class="room-of">Queen bed</div></div>
+        <div class="person"><div class="avatar" style="background:#7a8079;">+</div><div class="name">Other Guests</div><div class="room-of">Double bed</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <h2>¡Vámonos a Medellín! 🇨🇴</h2>
+      <p>El Poblado · November 11 – 18, 2026</p>
+      <a class="cta" href="https://www.airbnb.com/rooms/1198917328027879473?unique_share_id=67ab0a9a-54be-4081-9a8c-34319ba38b80" target="_blank" rel="noopener">View the Airbnb →</a>
+      <p class="small">Built for the crew · Edit room names, beds &amp; amenities anytime.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.photo[data-photo]').forEach(function (el) {
+      var src = el.getAttribute('data-photo');
+      var img = new Image();
+      img.onload = function () {
+        el.style.backgroundImage = 'url("' + src + '")';
+        var note = el.querySelector('.ph-note');
+        if (note) note.remove();
+      };
+      img.src = src;
+    });
+  </script>
+</body>
+</html>
+
+```
